@@ -1,14 +1,30 @@
 
 export class Item {
-    codigoItem: 655360,
-    nomenclaturaVarejo: PARACETAMOL 750MG 4CP TEUTO GEN AV CH,
-    nomeDetalhado: PARACETAMOL 750MG 4CP TEUTO GEN AV,
-    possuiItemAVencer: false,
-    participaPbm: false,
-    participaNovoPack: false,
-    permiteAdesao: false,
-    possuiKitAdesao: false,
-    exclusivoPanvel: false,
-    participaListaReferencial: false,
-    participaFarmaciaPopular: false
+  codigoItem: number;
+  nomenclaturaVarejo: string;
+  nomeDetalhado: string;
+  possuiItemAVencer: boolean;
+  participaPbm: boolean;
+  participaNovoPack: boolean;
+  permiteAdesao: boolean;
+  possuiKitAdesao: boolean;
+  exclusivoPanvel: boolean;
+  participaListaReferencial: boolean;
+  participaFarmaciaPopular: boolean;
+
+  constructor(codigoItem: number, nomenclaturaVarejo: string, nomeDetalhado: string, possuiItemAVencer: boolean,
+      participaPbm: boolean, participaNovoPack: boolean, permiteAdesao: boolean, possuiKitAdesao: boolean,
+      exclusivoPanvel: boolean, participaListaReferencial: boolean, participaFarmaciaPopular: boolean){
+        this.codigoItem = codigoItem;
+        this.nomenclaturaVarejo = nomenclaturaVarejo;
+        this.nomeDetalhado = nomeDetalhado;
+        this.possuiItemAVencer = possuiItemAVencer;
+        this.participaPbm = participaPbm;
+        this.participaNovoPack = participaNovoPack;
+        this.permiteAdesao = permiteAdesao;
+        this.possuiKitAdesao = possuiKitAdesao;
+        this.exclusivoPanvel = exclusivoPanvel;
+        this.participaListaReferencial = participaListaReferencial;
+        this.participaFarmaciaPopular = participaFarmaciaPopular;
+  }
 }
