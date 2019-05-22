@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ItemService } from 'src/app/service/item.service';
+import { Item } from 'src/app/model/item';
 
 @Component({
   selector: 'app-tela-inicial',
@@ -7,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class TelaInicialComponent implements OnInit {
+  private itens : Item[];
 
-  constructor() { }
+  constructor(private itemService: ItemService) { }
 
   ngOnInit() {
+    return this.itemService.buscaItens('parace')
+      .subscribe(e => {
+        this.itens = e;     
+      });
   }
-
 }

@@ -1,3 +1,6 @@
+import { InterceptorModule } from './modules/interceptor.module';
+import { HttpClient, HttpHandler, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ItemService } from 'src/app/service/item.service';
 import { PageNotFoundComponent } from './componentes/page-not-found/page-not-found.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -20,9 +23,11 @@ import { InformacoesComponent } from './componentes/informacoes/informacoes.comp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    InterceptorModule
   ],
-  providers: [],
+  providers: [ItemService],
   bootstrap: [AppComponent]
 })
 
