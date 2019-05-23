@@ -10,7 +10,8 @@ import { AppComponent } from './app.component';
 import { BarraNavegacaoComponent } from './componentes/barra-navegacao/barra-navegacao.component';
 import { TelaInicialComponent } from './componentes/tela-inicial/tela-inicial.component';
 import { InputEntradaComponent } from './componentes/input-entrada/input-entrada.component';
-import { InformacoesComponent } from './componentes/informacoes/informacoes.component';
+import { ListaItensComponent } from './componentes/lista-itens/lista-itens.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,15 +20,16 @@ import { InformacoesComponent } from './componentes/informacoes/informacoes.comp
     TelaInicialComponent,
     PageNotFoundComponent,
     InputEntradaComponent,
-    InformacoesComponent
+    ListaItensComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    InterceptorModule
+    InterceptorModule,
+    ReactiveFormsModule
   ],
-  providers: [ItemService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 

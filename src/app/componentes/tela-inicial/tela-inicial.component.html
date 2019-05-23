@@ -1,5 +1,5 @@
 <div class="container-fluid">
   <app-barra-navegacao> </app-barra-navegacao>
-  <app-input-entrada> </app-input-entrada>
-  <app-informacoes> </app-informacoes>
+  <app-input-entrada (enviaDescricao)="escolhaItens($event)"> </app-input-entrada>
+  <app-lista-itens [listaItens]="itens"> </app-lista-itens>
 </div>

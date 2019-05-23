@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'poc-dimed';
+  title = 'Poc Dimed';
 }

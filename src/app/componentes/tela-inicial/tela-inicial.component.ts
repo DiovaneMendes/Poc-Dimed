@@ -5,18 +5,24 @@ import { Item } from 'src/app/model/item';
 @Component({
   selector: 'app-tela-inicial',
   templateUrl: './tela-inicial.component.html',
-  styleUrls: ['./tela-inicial.component.css']
+  styleUrls: ['./tela-inicial.component.css'],
+  providers: [ItemService]
 })
 
 export class TelaInicialComponent implements OnInit {
-  private itens : Item[];
+  itens : Item[];
 
   constructor(private itemService: ItemService) { }
 
-  ngOnInit() {
-    return this.itemService.buscaItens('parace')
+  ngOnInit() { }
+
+  escolhaItens(enviaDescricao): Item[]{
+    this.itemService.buscaItens(enviaDescricao)
       .subscribe(e => {
-        this.itens = e;     
+        this.itens = e;
+        console.log(">>>>>>>>>>>>>> AQUI!" + this.itens);
       });
+    
+    return this.itens;
   }
 }
