@@ -10,14 +10,14 @@ import { FormControl } from '@angular/forms';
 export class InputEntradaComponent implements OnInit {
   @Input() valorDescricao: string = '';
   @Output() enviaDescricao = new EventEmitter();
-  descricao = new FormControl('');
 
+  private descricao = new FormControl('');
+  
   constructor() { }
 
   ngOnInit() { }
 
-  resposta(): void {  
+  resposta(): void {
     this.enviaDescricao.emit(this.descricao.value);
-    console.log(">>>>>>>>>>> ENVIA DESCRICAO <<<<<<<<<< " + this.descricao);
   }
 }
