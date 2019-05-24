@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from 'src/app/service/item.service';
-import { Item } from 'src/app/model/item';
+import { Base } from 'src/app/model/Base';
 import { Subject } from 'rxjs';
 import { switchMap, debounceTime } from 'rxjs/operators'
 
@@ -12,14 +12,14 @@ import { switchMap, debounceTime } from 'rxjs/operators'
 })
 
 export class TelaInicialComponent implements OnInit {
-  private itens : Item[];
+  private itens : Base[];
   private filtraDescricao: Subject<string> = new Subject<string>();
 
   constructor(private itemService: ItemService) { }
 
   ngOnInit() { }
 
-  escolhaItem(enviaDescricao: string): Item[]{
+  escolhaItem(enviaDescricao: string): Base[]{
     this.filtraDescricao.next(enviaDescricao);
 
     this.filtraDescricao

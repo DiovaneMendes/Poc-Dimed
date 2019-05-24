@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Item } from 'src/app/model/item';
+import { Base } from 'src/app/model/Base';
 
 @Component({
   selector: 'app-lista-itens',
@@ -7,10 +7,8 @@ import { Item } from 'src/app/model/item';
   styleUrls: ['./lista-itens.component.css']
 })
 
-export class ListaItensComponent implements OnInit {
-  @Input() listaItens: Item[];
+export class ListaItensComponent{
+  @Input() listaItens: Base[];
 
   constructor() { }
-
-  ngOnInit() { }
 }

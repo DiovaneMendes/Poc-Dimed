@@ -1,5 +1,5 @@
 
-export class Item {
+export class Base {
   codigoItem: number;
   nomenclaturaVarejo: string;
   nomeDetalhado: string;

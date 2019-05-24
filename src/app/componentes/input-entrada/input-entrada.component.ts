@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-input-entrada',
@@ -7,7 +7,6 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 
 export class InputEntradaComponent implements OnInit {
-  @Input() valorDescricao: string = '';
   @Output() enviaDescricao = new EventEmitter();
 
   private descricao: string;

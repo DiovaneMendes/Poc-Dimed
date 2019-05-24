@@ -3,7 +3,7 @@
 }
 
 .scroll{
-    overflow: auto;
+    overflow-y: auto;
 }
 
 ::-webkit-scrollbar {
