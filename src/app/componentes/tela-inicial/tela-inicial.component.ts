@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ItemService } from 'src/app/service/item.service';
 import { Item } from 'src/app/model/item';
 import { Subject } from 'rxjs';
-import { switchMap, debounceTime, catchError } from 'rxjs/operators'
+import { switchMap, debounceTime } from 'rxjs/operators'
 
 @Component({
   selector: 'app-tela-inicial',

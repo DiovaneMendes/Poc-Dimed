@@ -11,7 +11,7 @@ import { BarraNavegacaoComponent } from './componentes/barra-navegacao/barra-nav
 import { TelaInicialComponent } from './componentes/tela-inicial/tela-inicial.component';
 import { InputEntradaComponent } from './componentes/input-entrada/input-entrada.component';
 import { ListaItensComponent } from './componentes/lista-itens/lista-itens.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     InterceptorModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

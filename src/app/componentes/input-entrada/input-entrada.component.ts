@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-input-entrada',
@@ -11,13 +10,13 @@ export class InputEntradaComponent implements OnInit {
   @Input() valorDescricao: string = '';
   @Output() enviaDescricao = new EventEmitter();
 
-  private descricao = new FormControl('');
+  private descricao: string;
   
   constructor() { }
 
   ngOnInit() { }
 
   resposta(): void {
-    this.enviaDescricao.emit(this.descricao.value);
+    this.enviaDescricao.emit(this.descricao);
   }
 }

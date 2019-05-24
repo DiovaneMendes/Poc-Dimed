@@ -1,0 +1,19 @@
+.altura{
+    max-height: 540px !important;
+}
+
+.scroll{
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background-color: #708090;
+}
