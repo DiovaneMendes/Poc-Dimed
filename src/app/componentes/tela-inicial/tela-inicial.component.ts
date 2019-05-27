@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from 'src/app/service/item.service';
-import { Base } from 'src/app/model/Base';
 import { Subject } from 'rxjs';
-import { switchMap, debounceTime } from 'rxjs/operators'
+import { switchMap, debounceTime, map } from 'rxjs/operators'
+import { Item } from 'src/app/model/item';
 
 @Component({
   selector: 'app-tela-inicial',
@@ -12,22 +12,33 @@ import { switchMap, debounceTime } from 'rxjs/operators'
 })
 
 export class TelaInicialComponent implements OnInit {
-  private itens : Base[];
-  private filtraDescricao: Subject<string> = new Subject<string>();
+  private itens : Item[];
+  // private filtraDescricao: Subject<string> = new Subject<string>();
 
   constructor(private itemService: ItemService) { }
 
   ngOnInit() { }
 
-  escolhaItem(enviaDescricao: string): Base[]{
-    this.filtraDescricao.next(enviaDescricao);
+  escolhaItem(enviaDescricao: string): Item[]{
+    // this.filtraDescricao.next(enviaDescricao);
 
-    this.filtraDescricao
-        .pipe(
-          debounceTime(300),
-          switchMap(descricao => this.itemService.buscaItens(descricao)))
-        .subscribe(e => this.itens = e );
+    // this.filtraDescricao
+    //     .pipe(
+    //       debounceTime(300),
+    //       switchMap(descricao => 
+    //         this.itemService.buscaBases(descricao)
+    //       ))
+    //     .subscribe(e => this.itens = e );
 
+
+    this.itemService
+        .buscaBases(enviaDescricao)
+        .subscribe(e => this.itens = e);
+
+    this.itemService
+        .buscaDetalhe(822810)
+        .subscribe(e => console.log(e));
+        
     return this.itens;
   }
 }

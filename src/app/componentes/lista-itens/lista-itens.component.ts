@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Base } from 'src/app/model/Base';
+import { Item } from 'src/app/model/item';
 
 @Component({
   selector: 'app-lista-itens',
@@ -8,7 +8,7 @@ import { Base } from 'src/app/model/Base';
 })
 
 export class ListaItensComponent{
-  @Input() listaItens: Base[];
+  @Input() listaItens: Item[];
 
   constructor() { }
 }
