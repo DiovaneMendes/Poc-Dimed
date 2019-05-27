@@ -20,4 +20,10 @@ export class ItemService{
 
     return this.http.post<Item>(url, detalhe);
   }
+
+  buscaEstoque(codigoItem: number): Observable<Item>{
+    const url: string = `http://api-int.grupodimedservices.com.br/tst/filial/v1/filiais/101/estoque?itens=${codigoItem}`;
+
+    return this.http.get<Item>(url);
+  }
 }

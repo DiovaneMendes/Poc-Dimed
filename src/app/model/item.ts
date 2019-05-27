@@ -34,5 +34,5 @@ export class Item{
     this.situacaoItem = situacaoItem;
     this.advertencias = advertencias;
     this.categorias = categorias;
-    }
+  }
 }

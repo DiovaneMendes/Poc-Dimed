@@ -35,10 +35,14 @@ export class TelaInicialComponent implements OnInit {
         .buscaBases(enviaDescricao)
         .subscribe(e => this.itens = e);
 
+    // this.itemService
+    //     .buscaDetalhe(822810)
+    //     .subscribe(e => console.log(e));
+
     this.itemService
-        .buscaDetalhe(822810)
+        .buscaEstoque(822810)
         .subscribe(e => console.log(e));
-        
+
     return this.itens;
   }
 }
