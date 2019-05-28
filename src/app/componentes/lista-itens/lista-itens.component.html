@@ -1,13 +1,28 @@
 <div class="col"></div>
 
 <div class="col">
-  <div class="altura scroll" id="scroll">
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let item of listaItens">
-        {{item.nomenclaturaVarejo}} : {{item.ean}}
-      </li>
-    </ul>
-  </div>
+  <div class="fixar scroll">
+    <table class="table">   
+      <thead>
+        <tr class="titulos cor-letra">
+          <th scope="col" class="fundo">Código</th>
+          <th scope="col">Estoque</th>
+          <th scope="col">Preço</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">EAN</th>
+        </tr>
+      </thead> 
+      <tbody>
+        <tr *ngFor="let item of listaItens">
+          <td> {{item.codigoItem}} </td>
+          <td> {{item.estoqueLoja}} </td>
+          <td> {{item.precoPor}} </td>
+          <td> {{item.nomenclaturaVarejo}} </td>
+          <td> {{item.ean}} </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>  
 </div>
 
 <div class="col"></div>

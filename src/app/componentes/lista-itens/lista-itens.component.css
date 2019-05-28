@@ -1,19 +1,37 @@
-.altura{
-    max-height: 540px !important;
+.fixar {
+  height: 542px;
 }
 
+.fixar th {
+  background-color: rgba(112, 128, 144, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+} 
+
 .scroll{
-    overflow-y: auto;
+  overflow-y: auto;
 }
 
 ::-webkit-scrollbar {
-    width: 1px;
+  width: 1px;
 }
 
 ::-webkit-scrollbar-track-piece {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb:vertical {
-    background-color: #708090;
+  background-color: #708090;
+}
+
+.titulos{
+  border-radius: 5px;
+  height: 30px;
+  padding: 4px;
+}
+
+.cor-letra{
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.8);
 }

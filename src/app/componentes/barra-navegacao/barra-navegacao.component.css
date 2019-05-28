@@ -1,0 +1,9 @@
+.fundo{
+  background-color: rgba(112, 128, 144, 0.3) !important;
+  border-radius: 0 0 5px 5px;
+}
+
+.cor-letra{
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.8);
+}

@@ -3,8 +3,6 @@ import { Builder } from 'builder-pattern';
 import { Component } from '@angular/core';
 import { ItemService } from 'src/app/service/item.service';
 import { Item } from 'src/app/model/item';
-import { map, switchMap } from 'rxjs/operators';
-import { error } from 'util';
 
 @Component({
   selector: 'app-tela-inicial',
@@ -24,9 +22,6 @@ export class TelaInicialComponent{
         .subscribe({
           next: e => {
             this.listaFork(e)
-            // this.itens = e;
-            // console.log(this.itens);
-            
           },
           error: err => console.log(err)
         });    
@@ -37,12 +32,12 @@ export class TelaInicialComponent{
       this.itemService
           .requestDetalheEstoque(item.codigoItem)
           .subscribe(e => {
-            this.itens.push(this.montaItem(item, e));
+            this.itens.push(this.montaItem(item, e));            
           });
-    });
+    });    
   }
 
-  montaItem(item: Item, fork: ListaItem[]): Item{
+  montaItem(item: Item, fork: ListaItem[]): Item{    
     return Builder<Item>()
             .codigoItem(item.codigoItem)
             .estoqueLoja(fork[1][0].estoqueLoja)
