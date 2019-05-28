@@ -6,7 +6,6 @@ import { detalhe } from '../model/detalhe';
 
 @Injectable()
 export class ItemService{
-  private itens: Item[];
   constructor(private http: HttpClient) { }
 
   buscaBases(nome: string): Observable<Item[]>{
