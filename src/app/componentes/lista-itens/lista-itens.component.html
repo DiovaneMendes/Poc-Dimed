@@ -10,8 +10,9 @@
           <th scope="col">Preço</th>
           <th scope="col">Descrição</th>
           <th scope="col">EAN</th>
+          <th scope="col"></th>
         </tr>
-      </thead> 
+      </thead>
       <tbody>
         <tr *ngFor="let item of listaItens">
           <td> {{item.codigoItem}} </td>
@@ -19,6 +20,9 @@
           <td> {{item.precoPor}} </td>
           <td> {{item.nomenclaturaVarejo}} </td>
           <td> {{item.ean}} </td>
+          <td>
+            <button type="button" ngbAutofocus class="btn" (click)="modal.close('Ok click')"> Mais detalhes </button>
+          </td>
         </tr>
       </tbody>
     </table>
