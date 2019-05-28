@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { ListaItem } from './../../model/listaItem';
+import { Builder } from 'builder-pattern';
+import { Component } from '@angular/core';
 import { ItemService } from 'src/app/service/item.service';
-import { Subject } from 'rxjs';
-import { switchMap, debounceTime, map } from 'rxjs/operators'
 import { Item } from 'src/app/model/item';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tela-inicial',
@@ -11,38 +12,69 @@ import { Item } from 'src/app/model/item';
   providers: [ItemService]
 })
 
-export class TelaInicialComponent implements OnInit {
-  private itens : Item[];
-  // private filtraDescricao: Subject<string> = new Subject<string>();
+export class TelaInicialComponent{
+  private itens: Item[];
+  private itemPronto: ListaItem[];
 
   constructor(private itemService: ItemService) { }
 
-  ngOnInit() { }
-
-  escolhaItem(enviaDescricao: string): Item[]{
-    // this.filtraDescricao.next(enviaDescricao);
-
-    // this.filtraDescricao
-    //     .pipe(
-    //       debounceTime(300),
-    //       switchMap(descricao => 
-    //         this.itemService.buscaBases(descricao)
-    //       ))
-    //     .subscribe(e => this.itens = e );
-
+  escolhaItem(enviaDescricao: string): void{
 
     this.itemService
         .buscaBases(enviaDescricao)
-        .subscribe(e => this.itens = e);
+        .pipe(
+          map(item => {
+            this.itens = item.map((e) => {
+              let fork = this.listaFork(e);
+              
+              return Builder<Item>()
+                      .codigoItem(e.codigoItem)
+                      .estoqueLoja(fork[1][0].estoqueLoja)
+                      .precoPor(fork[0].itens[0].precoPor)
+                      .nomenclaturaVarejo(e.nomenclaturaVarejo)
+                      .ean(fork[0].itens[0].ean)
+                      .origemDesconto(fork[0].itens[0].origemDesconto)
+                      .precoDe(fork[0].itens[0].precoDe)
+                      .nomenclatura(fork[0].itens[0].nomenclatura)
+                      .nomenclaturaDetalhada(fork[0].itens[0].nomenclaturaDetalhada)
+                      .principioAtivo(fork[0].itens[0].principioAtivo)
+                      .classeTerapeutica(fork[0].itens[0].classeTerapeutica)
+                      .situacaoItem(fork[0].itens[0].situacaoItem)
+                      .advertencias(fork[0].itens[0].advertencias)
+                      .categorias(fork[0].itens[0].categorias)
+                    .build()
+                  })
+          })
+        )
+        .subscribe()
+    
+    console.log(this.itens);
+    
+  }
 
-    // this.itemService
-    //     .buscaDetalhe(822810)
-    //     .subscribe(e => console.log(e));
-
+  listaFork(item: Item): ListaItem[]{    
     this.itemService
-        .buscaEstoque(822810)
-        .subscribe(e => console.log(e));
-
-    return this.itens;
+        .requestDetalheEstoque(item.codigoItem)
+        .subscribe(e => this.itemPronto = e);
+        
+    return this.itemPronto;
   }
 }
+
+
+// Builder<Item>()
+//   .codigoItem(e.codigoItem)
+//   .estoqueLoja(fork[1][0].estoqueLoja)
+//   .precoPor(fork[0].itens[0].precoPor)
+//   .nomenclaturaVarejo(e.nomenclaturaVarejo)
+//   .ean(fork[0].itens[0].ean)
+//   .origemDesconto(fork[0].itens[0].origemDesconto)
+//   .precoDe(fork[0].itens[0].precoDe)
+//   .nomenclatura(fork[0].itens[0].nomenclatura)
+//   .nomenclaturaDetalhada(fork[0].itens[0].nomenclaturaDetalhada)
+//   .principioAtivo(fork[0].itens[0].principioAtivo)
+//   .classeTerapeutica(fork[0].itens[0].classeTerapeutica)
+//   .situacaoItem(fork[0].itens[0].situacaoItem)
+//   .advertencias(fork[0].itens[0].advertencias)
+//   .categorias(fork[0].itens[0].categorias)
+// .build()

@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 import { Item } from '../model/item';
 import { detalhe } from '../model/detalhe';
 
 @Injectable()
 export class ItemService{
+  private itens: Item[];
   constructor(private http: HttpClient) { }
 
   buscaBases(nome: string): Observable<Item[]>{
@@ -25,5 +26,9 @@ export class ItemService{
     const url: string = `http://api-int.grupodimedservices.com.br/tst/filial/v1/filiais/101/estoque?itens=${codigoItem}`;
 
     return this.http.get<Item>(url);
+  }
+
+  requestDetalheEstoque(codigoItem: number): Observable<any[]>{
+    return forkJoin([this.buscaDetalhe(codigoItem), this.buscaEstoque(codigoItem)]);
   }
 }

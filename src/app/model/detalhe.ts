@@ -6,5 +6,11 @@ export let detalhe = {
       codigo: 0,
       quantidade: 1
     }
-  ]
+  ],
+  consultaRegrasFiscais: {
+    uf: "RS",
+    pais: "BR",
+    ufDestino: "RS",
+    paisDestino: "BR"
+  }
 }
