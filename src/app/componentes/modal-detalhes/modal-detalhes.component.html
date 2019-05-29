@@ -1,25 +1,23 @@
-<div class="modal-content">
-  <div class="modal-header">
-    <h4 class="modal-title pull-left">{{item.nomenclatura}}</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  
-  <div class="modal-body">
-    <p> Desconto: {{item.origemDesconto}} </p>
-    <p> Preço de: {{item.precoDe}} </p>
-    <p> Preço por: {{item.precoPor}} </p>
-    <p> Nomenclatura detalhada: {{item.nomenclaturaDetalhada}} </p>
-    <p> Princípio ativo: {{item.principioAtivo}} </p>
-    <p> Classe terapeutica: {{item.classeTerapeutica}} </p>
-    <p> Situação: {{item.situacaoItem}} </p>
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{item.nomenclatura}}</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 
-    <app-lista-advertencia [listaAdvertencias]="item.advertencias"></app-lista-advertencia>
-    <app-tabela-categoria [listaCategorias]="item.categorias"></app-tabela-categoria>
-  </div>
-  
-  <div class="modal-footer">
-    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
-  </div>
+<div class="modal-body">
+  <p> <strong class="titulo"> Desconto: </strong> {{item.origemDesconto}} </p>
+  <p><strong class="titulo"> Preço de: </strong> {{item.precoDe}} </p>
+  <p><strong class="titulo"> Preço por: </strong> {{item.precoPor}} </p>
+  <p><strong class="titulo"> Nomenclatura detalhada: </strong> {{item.nomenclaturaDetalhada}} </p>
+  <p><strong class="titulo"> Princípio ativo: </strong> {{item.principioAtivo}} </p>
+  <p><strong class="titulo"> Classe terapeutica: </strong> {{item.classeTerapeutica}} </p>
+  <p><strong class="titulo"> Situação: </strong> {{item.situacaoItem}} </p>
+
+  <app-lista-advertencia [listaAdvertencias]="item.advertencias"></app-lista-advertencia>
+  <app-tabela-categoria [listaCategorias]="item.categorias"></app-tabela-categoria>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
 </div>
