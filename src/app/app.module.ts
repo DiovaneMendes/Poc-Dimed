@@ -11,6 +11,7 @@ import { MaisDetalhesComponent } from './componentes/mais-detalhes/mais-detalhes
 import { TelaInicialComponent } from './componentes/tela-inicial/tela-inicial.component';
 import { ListaItensComponent } from './componentes/lista-itens/lista-itens.component';
 import { AppComponent } from './app.component';
+import { ModalDetalhesComponent } from './componentes/modal-detalhes/modal-detalhes.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AppComponent } from './app.component';
     PageNotFoundComponent,
     InputEntradaComponent,
     ListaItensComponent,
-    MaisDetalhesComponent
+    MaisDetalhesComponent,
+    ModalDetalhesComponent
   ],
   imports: [
     RestModule,

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MaisDetalhesComponent } from './mais-detalhes.component';
+import { ModalDetalhesComponent } from './modal-detalhes.component';
 
-describe('MaisDetalhesComponent', () => {
-  let component: MaisDetalhesComponent;
-  let fixture: ComponentFixture<MaisDetalhesComponent>;
+describe('ModalDetalhesComponent', () => {
+  let component: ModalDetalhesComponent;
+  let fixture: ComponentFixture<ModalDetalhesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MaisDetalhesComponent ]
+      declarations: [ ModalDetalhesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MaisDetalhesComponent);
+    fixture = TestBed.createComponent(ModalDetalhesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
