@@ -15,7 +15,6 @@ export class ModalDetalhesComponent implements OnInit{
   constructor(public bsModalRef: BsModalRef) { }
 
   ngOnInit(){
-    this.item;
-    console.log(this.item);    
+    this.item; 
   }
 }

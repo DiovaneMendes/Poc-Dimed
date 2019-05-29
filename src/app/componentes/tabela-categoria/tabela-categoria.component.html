@@ -1,0 +1,17 @@
+<div> 
+  Categorias:
+  <table class="table">   
+    <thead>
+      <tr class="titulos cor-letra">
+        <th scope="col">Nível</th>
+        <th scope="col">Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let categ of listaCategorias">
+        <td> {{categ.nivel}} </td>
+        <td> {{categ.descricao}} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

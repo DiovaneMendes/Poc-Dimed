@@ -13,6 +13,7 @@ import { TelaInicialComponent } from './componentes/tela-inicial/tela-inicial.co
 import { ListaItensComponent } from './componentes/lista-itens/lista-itens.component';
 import { AppComponent } from './app.component';
 import { ListaAdvertenciaComponent } from './componentes/lista-advertencia/lista-advertencia.component';
+import { TabelaCategoriaComponent } from './componentes/tabela-categoria/tabela-categoria.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ListaAdvertenciaComponent } from './componentes/lista-advertencia/lista
     InputEntradaComponent,
     ListaItensComponent,
     ModalDetalhesComponent,
-    ListaAdvertenciaComponent
+    ListaAdvertenciaComponent,
+    TabelaCategoriaComponent
   ],
   imports: [
     RestModule,

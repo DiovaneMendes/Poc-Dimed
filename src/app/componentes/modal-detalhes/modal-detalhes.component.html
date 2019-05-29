@@ -16,23 +16,7 @@
     <p> Situação: {{item.situacaoItem}} </p>
 
     <app-lista-advertencia [listaAdvertencias]="item.advertencias"></app-lista-advertencia>
-    <div> 
-      Categorias:
-      <table class="table">   
-        <thead>
-          <tr class="titulos cor-letra">
-            <th scope="col">Nível</th>
-            <th scope="col">Descrição</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let categ of item.categorias">
-            <td> {{categ.nivel}} </td>
-            <td> {{categ.descricao}} </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <app-tabela-categoria [listaCategorias]="item.categorias"></app-tabela-categoria>
   </div>
   
   <div class="modal-footer">
