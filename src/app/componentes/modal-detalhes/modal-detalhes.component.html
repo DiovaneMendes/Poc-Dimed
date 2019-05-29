@@ -1,6 +1,6 @@
 <div class="modal-header">
   <h4 class="modal-title pull-left">{{item.nomenclatura}}</h4>
-  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+  <button type="button" class="close pull-right" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
@@ -19,5 +19,5 @@
 </div>
 
 <div class="modal-footer">
-  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
+  <button type="button" class="btn btn-default" (click)="activeModal.close('Close click')"> Fechar </button>
 </div>

@@ -1,20 +1,16 @@
-import { BsModalRef } from 'ngx-bootstrap/modal';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Item } from 'src/app/model/item';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-modal-detalhes',
   templateUrl: './modal-detalhes.component.html',
   styleUrls: ['./modal-detalhes.component.css'],
-  providers: [BsModalRef]
+  providers: [NgbActiveModal]
 })
 
-export class ModalDetalhesComponent implements OnInit{
-  private item: Item;
+export class ModalDetalhesComponent{
+  @Input() item: Item;
 
-  constructor(public bsModalRef: BsModalRef) { }
-
-  ngOnInit(){
-    this.item; 
-  }
+  constructor(public activeModal: NgbActiveModal){ }
 }
