@@ -16,7 +16,7 @@ export class ListaItensComponent{
   constructor(private modalService: NgbModal) { }
 
   abrirModal(item: Item): void{
-    let modalRef = this.modalService.open(ModalDetalhesComponent);
+    const modalRef = this.modalService.open(ModalDetalhesComponent, { size: 'lg'});
     modalRef.componentInstance.item = item;
   }
 }
