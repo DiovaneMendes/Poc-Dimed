@@ -14,28 +14,24 @@
     <p> Princípio ativo: {{item.principioAtivo}} </p>
     <p> Classe terapeutica: {{item.classeTerapeutica}} </p>
     <p> Situação: {{item.situacaoItem}} </p>
-    <div> 
-      Advertências: 
-      <ul class="list-group" *ngFor="let adv of item.advertencias">
-        <li class="list-group-item"> {{adv}} </li>
-      </ul>
-    </div>
+
+    <app-lista-advertencia [listaAdvertencias]="item.advertencias"></app-lista-advertencia>
     <div> 
       Categorias:
       <table class="table">   
-          <thead>
-            <tr class="titulos cor-letra">
-              <th scope="col">Nível</th>
-              <th scope="col">Descrição</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let categ of item.categorias">
-              <td> {{categ.nivel}} </td>
-              <td> {{categ.descricao}} </td>
-            </tr>
-          </tbody>
-        </table>
+        <thead>
+          <tr class="titulos cor-letra">
+            <th scope="col">Nível</th>
+            <th scope="col">Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let categ of item.categorias">
+            <td> {{categ.nivel}} </td>
+            <td> {{categ.descricao}} </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
   

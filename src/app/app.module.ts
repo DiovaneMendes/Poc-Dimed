@@ -12,6 +12,7 @@ import { InputEntradaComponent } from './componentes/input-entrada/input-entrada
 import { TelaInicialComponent } from './componentes/tela-inicial/tela-inicial.component';
 import { ListaItensComponent } from './componentes/lista-itens/lista-itens.component';
 import { AppComponent } from './app.component';
+import { ListaAdvertenciaComponent } from './componentes/lista-advertencia/lista-advertencia.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AppComponent } from './app.component';
     PageNotFoundComponent,
     InputEntradaComponent,
     ListaItensComponent,
-    ModalDetalhesComponent
+    ModalDetalhesComponent,
+    ListaAdvertenciaComponent
   ],
   imports: [
     RestModule,
