@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Categoria } from 'src/app/model/categoria';
 
 @Component({
@@ -7,12 +7,6 @@ import { Categoria } from 'src/app/model/categoria';
   styleUrls: ['./tabela-categoria.component.css']
 })
 
-export class TabelaCategoriaComponent implements OnInit {
+export class TabelaCategoriaComponent{
   @Input() listaCategorias: Categoria[];
-
-  constructor() { }
-
-  ngOnInit() {
-    this.listaCategorias;
-  }
 }
