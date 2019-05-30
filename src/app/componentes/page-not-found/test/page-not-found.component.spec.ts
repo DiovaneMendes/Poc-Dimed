@@ -1,6 +1,7 @@
+import { BarraNavegacaoComponent } from './../../barra-navegacao/barra-navegacao.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageNotFoundComponent } from './page-not-found.component';
+import { PageNotFoundComponent } from '../page-not-found.component';
 
 describe('PageNotFoundComponent', () => {
   let component: PageNotFoundComponent;
@@ -8,7 +9,7 @@ describe('PageNotFoundComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageNotFoundComponent ]
+      declarations: [ PageNotFoundComponent, BarraNavegacaoComponent ]
     })
     .compileComponents();
   }));
@@ -19,7 +20,7 @@ describe('PageNotFoundComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Deve criar componente', () => {
     expect(component).toBeTruthy();
   });
 });

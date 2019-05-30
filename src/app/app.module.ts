@@ -1,5 +1,5 @@
-import { AppRoutingModule } from './modules/app-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './modules/app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RestModule } from './modules/rest.module';
@@ -18,22 +18,22 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
-    BarraNavegacaoComponent,
+    ListaItensComponent,
     TelaInicialComponent,
     PageNotFoundComponent,
     InputEntradaComponent,
-    ListaItensComponent,
     ModalDetalhesComponent,
-    ListaAdvertenciaComponent,
-    TabelaCategoriaComponent
+    BarraNavegacaoComponent,
+    TabelaCategoriaComponent,
+    ListaAdvertenciaComponent
   ],
   imports: [
+    NgbModule,
     RestModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    FormsModule,
-    NgbModule
+    ReactiveFormsModule
   ],
   entryComponents: [ModalDetalhesComponent],
   providers: [],

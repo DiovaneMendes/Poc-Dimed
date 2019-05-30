@@ -5,11 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './barra-navegacao.component.html',
   styleUrls: ['./barra-navegacao.component.css']
 })
-export class BarraNavegacaoComponent implements OnInit {
 
+export class BarraNavegacaoComponent{
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

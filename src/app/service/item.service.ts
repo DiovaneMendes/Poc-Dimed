@@ -4,7 +4,9 @@ import { Observable, forkJoin } from 'rxjs';
 import { Item } from '../model/item';
 import { detalhe } from '../model/detalhe';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ItemService{
   constructor(private http: HttpClient) { }
 
