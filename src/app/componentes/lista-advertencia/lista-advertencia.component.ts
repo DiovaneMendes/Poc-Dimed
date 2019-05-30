@@ -6,12 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./lista-advertencia.component.css']
 })
 
-export class ListaAdvertenciaComponent implements OnInit {
+export class ListaAdvertenciaComponent{
   @Input() listaAdvertencias: string[];
-
-  constructor() { }
-
-  ngOnInit() {
-    this.listaAdvertencias;
-  }
 }

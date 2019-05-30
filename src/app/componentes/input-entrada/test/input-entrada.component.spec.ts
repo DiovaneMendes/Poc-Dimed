@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { InputEntradaComponent } from '../input-entrada.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 
 describe('InputEntradaComponent', () => {
   let component: InputEntradaComponent;
@@ -25,5 +25,15 @@ describe('InputEntradaComponent', () => {
 
   it('Deve criar component', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('', () => {
+    beforeEach(() => {
+      spyOn(component, 'resposta').and.callFake(() => { });
+    });
+
+    it('', () => {
+      expect(component)
+    });
   });
 });
