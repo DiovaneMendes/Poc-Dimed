@@ -1,5 +1,5 @@
-import { PageNotFoundComponent } from './componentes/page-not-found/page-not-found.component';
-import { TelaInicialComponent } from './componentes/tela-inicial/tela-inicial.component';
+import { PageNotFoundComponent } from '../componentes/page-not-found/page-not-found.component';
+import { TelaInicialComponent } from '../componentes/tela-inicial/tela-inicial.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
