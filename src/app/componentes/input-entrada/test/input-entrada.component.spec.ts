@@ -26,14 +26,4 @@ describe('InputEntradaComponent', () => {
   it('Deve criar component', () => {
     expect(component).toBeTruthy();
   });
-
-  describe('', () => {
-    beforeEach(() => {
-      spyOn(component, 'resposta').and.callFake(() => { });
-    });
-
-    it('', () => {
-      expect(component)
-    });
-  });
 });

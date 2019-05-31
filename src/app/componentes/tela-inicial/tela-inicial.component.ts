@@ -12,7 +12,7 @@ import { Item } from 'src/app/model/item';
 })
 
 export class TelaInicialComponent{
-  private itens: Item[];
+  public itens: Item[];
 
   constructor(private itemService: ItemService) { }
 
@@ -31,13 +31,18 @@ export class TelaInicialComponent{
     this.itens = listaItens.filter(item => {
       this.itemService
           .requestDetalheEstoque(item.codigoItem)
-          .subscribe(e => {
-            this.itens.push(this.montaItem(item, e));            
+          .subscribe({
+            next: e => {
+              this.itens.push(this.montaItem(item, e))
+            },
+            error: err => console.log(err)
           });
     });    
   }
 
-  montaItem(item: Item, fork: ListaItem[]): Item{    
+  montaItem(item: Item, fork: ListaItem[]): Item{  
+    console.log(fork);
+      
     return Builder<Item>()
             .codigoItem(item.codigoItem)
             .estoqueLoja(fork[1][0].estoqueLoja)

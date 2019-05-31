@@ -9,9 +9,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class InputEntradaComponent {
   @Output() enviaDescricao = new EventEmitter();
 
-  private descricao: string;
-  
-  constructor(){ }
+  descricao: string;
 
   resposta(): void {
     this.enviaDescricao.emit(this.descricao);

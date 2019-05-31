@@ -23,6 +23,6 @@ export class ListaItensStub{
           .build()
   }
 
-  public static open() { }
+  public open() { }
 
 }

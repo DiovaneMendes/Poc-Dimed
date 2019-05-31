@@ -1,3 +1,4 @@
+import { Builder } from 'builder-pattern';
 import { HttpClient } from '@angular/common/http';
 import { ListaItensComponent } from './../../lista-itens/lista-itens.component';
 import { ListaItem } from './../../../model/listaItem';
@@ -41,8 +42,8 @@ describe('TelaInicialComponent', () => {
       component = TestBed.get(ItemService);
       fixture = TestBed.createComponent(TelaInicialComponent);
       component = fixture.componentInstance;
+      component.itens = [];
       service = fixture.debugElement.injector.get(ItemService);
-      fixture.detectChanges();
     })
   }));
 
@@ -69,8 +70,24 @@ describe('TelaInicialComponent', () => {
       component.listaFork(stub.getItens());
     });
 
+    it('Deve chamar o metodo [montaItem]', () => {
+      expect(component.montaItem).toHaveBeenCalled();
+    });
+  });
+
+  fdescribe('Dado que o metodo [montaItem] seja chamado ... ', () => {
+    // beforeEach(() => {
+      
+    // });
+    let itemIncompleto = stub.getItemIncompleto();
+    let listaItem = stub.getListaItemDetalhes();
+    let itemPronto = stub.getItem();
+
+    console.log(listaItem);
+    
+
     it('Deve montar um item', () => {
-      expect(component.montaItem).toBeTruthy();
+      expect(component.montaItem(itemIncompleto, listaItem)).toEqual(itemPronto);
     });
   });
 });
