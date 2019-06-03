@@ -1,9 +1,7 @@
-import { ItemDetalhe } from './itemDetalhe';
-
 export class ListaItem{
-  itens: ItemDetalhe[];
+  itens: any[];
 
-  constructor(itens: ItemDetalhe[]){
+  constructor(itens: any[]){
     this.itens = itens;
   }
 }

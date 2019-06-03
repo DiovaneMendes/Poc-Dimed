@@ -3,6 +3,8 @@ import { Builder } from 'builder-pattern';
 import { Item } from 'src/app/model/item';
 import { Categoria } from 'src/app/model/categoria';
 import { ItemDetalhe } from 'src/app/model/itemDetalhe';
+import { Estoque } from 'src/app/model/estoque';
+import { HttpErrorResponse } from '@angular/common/http';
 
 export class TelaInicialStub{
 
@@ -74,14 +76,14 @@ export class TelaInicialStub{
           .build()
   }
 
-  public static getListaItemDetalhes(): ListaItem[]{
+  public static getListaItemDetalhes(): any[]{
     return [ 
       Builder<ListaItem>()
         .itens([this.getItemDetalhe(), this.getItemDetalhe()])
       .build(),
-      Builder<ListaItem>()
-        .itens([this.getItemDetalhe(), this.getItemDetalhe()])
-      .build()
+      [ Builder<Estoque>()
+        .estoqueLoja(45)
+      .build() ]
     ];
   }
 

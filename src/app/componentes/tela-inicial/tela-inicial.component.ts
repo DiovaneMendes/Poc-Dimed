@@ -23,7 +23,7 @@ export class TelaInicialComponent{
           next: e => {
             this.listaFork(e)
           },
-          error: err => console.log(err)
+          error: () => {console.error('Erro na busca pela descrição passada!')}
         });    
   }
 
@@ -35,14 +35,12 @@ export class TelaInicialComponent{
             next: e => {
               this.itens.push(this.montaItem(item, e))
             },
-            error: err => console.log(err)
+            error: () => {console.error('Erro ao montar itens!')}
           });
     });    
   }
 
-  montaItem(item: Item, fork: ListaItem[]): Item{  
-    console.log(fork);
-      
+  montaItem(item: Item, fork: ListaItem[]): Item{        
     return Builder<Item>()
             .codigoItem(item.codigoItem)
             .estoqueLoja(fork[1][0].estoqueLoja)
