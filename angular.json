@@ -77,7 +77,8 @@
           "options": {
             "codeCoverage": true,
             "codeCoverageExclude": [
-              "src/app/model/**"
+              "src/app/model/**",
+              "*/**/*stub*.ts"
             ],
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
