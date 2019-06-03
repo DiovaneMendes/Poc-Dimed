@@ -52,12 +52,15 @@ describe('ListaItensComponent', () => {
       spyOn(modal, 'open').and.callFake(() => { 
         return fixtureModal;
       });
-      spyOn(component, 'abrirModal');
       component.abrirModal(item);
     })
 
     it('Deve abrir modal', () => {
       expect(modal.open).toHaveBeenCalled();
+    });
+
+    it('Deve ter um item já setado', () => {
+      expect(componentModal.item).toEqual(item);
     });
   })
 });
