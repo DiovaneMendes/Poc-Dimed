@@ -1,10 +1,9 @@
-import { ListaItem } from './../../../model/listaItem';
-import { Builder } from 'builder-pattern';
-import { Item } from 'src/app/model/item';
-import { Categoria } from 'src/app/model/categoria';
 import { ItemDetalhe } from 'src/app/model/itemDetalhe';
+import { ListaItem } from './../../../model/listaItem';
+import { Categoria } from 'src/app/model/categoria';
 import { Estoque } from 'src/app/model/estoque';
-import { HttpErrorResponse } from '@angular/common/http';
+import { Item } from 'src/app/model/item';
+import { Builder } from 'builder-pattern';
 
 export class TelaInicialStub{
 
@@ -25,6 +24,25 @@ export class TelaInicialStub{
               .advertencias(['Não use junto com outros medicamentos que contenham paracetamol, com álcool, ou em caso de doença grave do fígado.',
                             'A persistirem os sintomas, o médico deverá ser consultado.'])
               .categorias([new Categoria('Medicamentos', 1), new Categoria('Relaxantes Musculares', 3)])
+            .build() ];
+  }
+
+  public static getItensError(): Item[]{
+    return [ Builder<Item>()
+              .codigoItem(999999)
+              .estoqueLoja(null)
+              .precoPor(null)
+              .nomenclaturaVarejo(null)
+              .ean(null)
+              .origemDesconto(null)
+              .precoDe(null)
+              .nomenclatura(null)
+              .nomenclaturaDetalhada(null)
+              .principioAtivo(null)
+              .classeTerapeutica(null)
+              .situacaoItem(null)
+              .advertencias(null)
+              .categorias(null)
             .build() ];
   }
 

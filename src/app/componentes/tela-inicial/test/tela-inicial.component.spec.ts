@@ -50,8 +50,8 @@ describe('TelaInicialComponent', () => {
     expect(component).toBeTruthy();
   });
   
-  describe('Dado que o metodo [escolhaItem] tenha sido chamado ...', () => {
-    describe('Dado que a descrição seja válida ...', () => {
+  describe('Dado que o metodo [escolhaItem] tenha sido chamado...', () => {
+    describe('Dado que a descrição seja válida...', () => {
       beforeEach(() => {
         spyOn(service, 'buscaBases').and.returnValue( of(stub.getItens()) );
         spyOn(component, 'listaFork');
@@ -63,7 +63,7 @@ describe('TelaInicialComponent', () => {
       });
     });
 
-    describe('Dado que a descrição seja inválida ...', () => {
+    describe('Dado que a descrição seja inválida...', () => {
       beforeEach(() => {
         spyOn(service, 'buscaBases').and.returnValue( throwError('') );
         spyOn(component, 'listaFork');
@@ -71,25 +71,40 @@ describe('TelaInicialComponent', () => {
         component.escolhaItem('tork');
       });
 
-      it('Deve monstrar mensagem de erro', () => {
+      it('Deve mostrar mensagem de erro', () => {
         expect(console.error).toHaveBeenCalledWith('Erro na busca pela descrição passada!');
       });
     });
   });
   
-  describe('Dado que o metodo [listaFork] tenha sido chamado ...', () => {
-    beforeEach(() => {
-      spyOn(service, 'requestDetalheEstoque').and.returnValue( of(stub.getFork()) );
-      spyOn(component, 'montaItem');
-      component.listaFork(stub.getItens());
+  describe('Dado que o metodo [listaFork] tenha sido chamado...', () => {
+    describe('Dado que o código seja válido...', () => {
+      beforeEach(() => {
+        spyOn(service, 'requestDetalheEstoque').and.returnValue( of(stub.getFork()) );
+        spyOn(component, 'montaItem');
+        component.listaFork(stub.getItens());
+      });
+  
+      it('Deve chamar o metodo [montaItem]', () => {
+        expect(component.montaItem).toHaveBeenCalled();
+      });
     });
 
-    it('Deve chamar o metodo [montaItem]', () => {
-      expect(component.montaItem).toHaveBeenCalled();
+    describe('Dado que a descrição seja inválida...', () => {
+      beforeEach(() => {
+        spyOn(service, 'requestDetalheEstoque').and.returnValue( throwError('') );
+        spyOn(component, 'montaItem');
+        spyOn(console, 'error');
+        component.listaFork(stub.getItensError());
+      });
+
+      it('Deve mostrar mensagem de erro', () => {
+        expect(console.error).toHaveBeenCalledWith('Erro ao montar itens!');
+      });
     });
   });
 
-  describe('Dado que o metodo [montaItem] seja chamado ... ', () => {
+  describe('Dado que o metodo [montaItem] seja chamado... ', () => {
     let itemIncompleto = stub.getItemIncompleto();
     let listaItem = stub.getListaItemDetalhes();
     let itemPronto = stub.getItem();    
