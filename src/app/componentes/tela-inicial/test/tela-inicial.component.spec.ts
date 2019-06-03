@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { ListaItensComponent } from './../../lista-itens/lista-itens.component';
 import { ListaItem } from './../../../model/listaItem';
 import { InputEntradaComponent } from './../../input-entrada/input-entrada.component';
-import { ItemService } from '../../../service/item.service';
+import { ItemService } from '../../../service/item-service/item.service';
 import { BarraNavegacaoComponent } from './../../barra-navegacao/barra-navegacao.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 

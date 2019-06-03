@@ -1,7 +1,7 @@
 import { ListaItem } from './../../model/listaItem';
 import { Builder } from 'builder-pattern';
 import { Component } from '@angular/core';
-import { ItemService } from 'src/app/service/item.service';
+import { ItemService } from 'src/app/service/item-service/item.service';
 import { Item } from 'src/app/model/item';
 
 @Component({
@@ -32,7 +32,7 @@ export class TelaInicialComponent{
       this.itemService
           .requestDetalheEstoque(item.codigoItem)
           .subscribe({
-            next: e => {
+            next: e => {              
               this.itens.push(this.montaItem(item, e))
             },
             error: () => {console.error('Erro ao montar itens!')}

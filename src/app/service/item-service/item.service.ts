@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin } from 'rxjs';
-import { Item } from '../model/item';
-import { detalhe } from '../model/detalhe';
+import { Item } from '../../model/item';
+import { detalhe } from '../../model/detalhe';
 
 @Injectable({
   providedIn: 'root',

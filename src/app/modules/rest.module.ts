@@ -1,4 +1,4 @@
-import { TokenService } from 'src/app/service/token.service';
+import { TokenService } from 'src/app/service/token-service/token.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
