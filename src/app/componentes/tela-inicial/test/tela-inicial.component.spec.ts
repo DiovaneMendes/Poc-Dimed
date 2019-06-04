@@ -72,7 +72,7 @@ describe('TelaInicialComponent', () => {
       });
 
       it('Deve mostrar mensagem de erro', () => {
-        expect(console.error).toHaveBeenCalledWith('Erro na busca pela descrição passada!');
+        expect(console.error).toHaveBeenCalledWith('Houve um erro na busca do item!');
       });
     });
   });

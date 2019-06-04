@@ -12,8 +12,6 @@ import { Item } from 'src/app/model/item';
 })
 
 export class TelaInicialComponent{
-  public mensagemAlerta: string = '';
-
   public itens: Item[];
 
   constructor(private itemService: ItemService) { }
@@ -25,7 +23,7 @@ export class TelaInicialComponent{
           next: e => {
             this.listaFork(e)
           },
-          error: () => { this.mensagemAlerta = 'Houve um erro na busca do item!' }
+          error: () => { console.error('Houve um erro na busca do item!') }
         });
   }
 
@@ -37,7 +35,7 @@ export class TelaInicialComponent{
             next: e => {
               this.itens.push(this.montaItem(item, e))
             },
-            error: () => { this.mensagemAlerta = 'Houve um erro interno!' }
+            error: () => { console.error('Houve um erro interno!') }
           });
     });
   }
