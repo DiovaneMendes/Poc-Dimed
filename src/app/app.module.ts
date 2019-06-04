@@ -13,13 +13,11 @@ import { PageNotFoundComponent } from './componentes/page-not-found/page-not-fou
 import { InputEntradaComponent } from './componentes/input-entrada/input-entrada.component';
 import { TelaInicialComponent } from './componentes/tela-inicial/tela-inicial.component';
 import { ListaItensComponent } from './componentes/lista-itens/lista-itens.component';
-import { AlertaComponent } from './componentes/alerta/alerta.component';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AlertaComponent,
     ListaItensComponent,
     TelaInicialComponent,
     PageNotFoundComponent,
