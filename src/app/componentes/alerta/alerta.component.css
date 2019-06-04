@@ -1,0 +1,11 @@
+.alert{
+  text-align: center;
+}
+
+.off{
+  height: 1px;
+}
+
+.on{
+  border-color: rgba(139,0,0, 1);
+}

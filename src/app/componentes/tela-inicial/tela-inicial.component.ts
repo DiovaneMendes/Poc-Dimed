@@ -12,6 +12,8 @@ import { Item } from 'src/app/model/item';
 })
 
 export class TelaInicialComponent{
+  public mensagemAlerta: string = '';
+
   public itens: Item[];
 
   constructor(private itemService: ItemService) { }
@@ -23,8 +25,8 @@ export class TelaInicialComponent{
           next: e => {
             this.listaFork(e)
           },
-          error: () => {console.error('Erro na busca pela descrição passada!')}
-        });    
+          error: () => { this.mensagemAlerta = 'Houve um erro na busca do item!' }
+        });
   }
 
   listaFork(listaItens: Item[]): void{
@@ -32,15 +34,15 @@ export class TelaInicialComponent{
       this.itemService
           .requestDetalheEstoque(item.codigoItem)
           .subscribe({
-            next: e => {              
+            next: e => {
               this.itens.push(this.montaItem(item, e))
             },
-            error: () => {console.error('Erro ao montar itens!')}
+            error: () => { this.mensagemAlerta = 'Houve um erro interno!' }
           });
-    });    
+    });
   }
 
-  montaItem(item: Item, fork: ListaItem[]): Item{        
+  montaItem(item: Item, fork: ListaItem[]): Item{
     return Builder<Item>()
             .codigoItem(item.codigoItem)
             .estoqueLoja(fork[1][0].estoqueLoja)

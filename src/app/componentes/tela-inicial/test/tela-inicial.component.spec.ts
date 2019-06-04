@@ -19,7 +19,7 @@ describe('TelaInicialComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ 
+      declarations: [
         TelaInicialComponent,
         BarraNavegacaoComponent,
         InputEntradaComponent,
@@ -49,7 +49,7 @@ describe('TelaInicialComponent', () => {
   it('Deve criar componente', () => {
     expect(component).toBeTruthy();
   });
-  
+
   describe('Dado que o metodo [escolhaItem] tenha sido chamado...', () => {
     describe('Dado que a descrição seja válida...', () => {
       beforeEach(() => {
@@ -57,7 +57,7 @@ describe('TelaInicialComponent', () => {
         spyOn(component, 'listaFork');
         component.escolhaItem('tors');
       });
-  
+
       it('Deve chamar o metodo [listaFork]', () => {
         expect(component.listaFork).toHaveBeenCalled();
       });
@@ -76,7 +76,7 @@ describe('TelaInicialComponent', () => {
       });
     });
   });
-  
+
   describe('Dado que o metodo [listaFork] tenha sido chamado...', () => {
     describe('Dado que o código seja válido...', () => {
       beforeEach(() => {
@@ -84,7 +84,7 @@ describe('TelaInicialComponent', () => {
         spyOn(component, 'montaItem');
         component.listaFork(stub.getItens());
       });
-  
+
       it('Deve chamar o metodo [montaItem]', () => {
         expect(component.montaItem).toHaveBeenCalled();
       });
@@ -99,7 +99,7 @@ describe('TelaInicialComponent', () => {
       });
 
       it('Deve mostrar mensagem de erro', () => {
-        expect(console.error).toHaveBeenCalledWith('Erro ao montar itens!');
+        expect(console.error).toHaveBeenCalledWith('Houve um erro interno!');
       });
     });
   });
@@ -107,7 +107,7 @@ describe('TelaInicialComponent', () => {
   describe('Dado que o metodo [montaItem] seja chamado... ', () => {
     let itemIncompleto = stub.getItemIncompleto();
     let listaItem = stub.getListaItemDetalhes();
-    let itemPronto = stub.getItem();    
+    let itemPronto = stub.getItem();
 
     it('Deve montar um item', () => {
       expect(component.montaItem(itemIncompleto, listaItem)).toEqual(itemPronto);

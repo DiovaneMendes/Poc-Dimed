@@ -2,16 +2,16 @@
   <div class="col-4"></div>
 
   <div class="col-4">
-    <div class="input-group input-group-sm centralizar">
+    <div class="input-group-sm espaco tamanho-input">
       <form #f="ngForm" (ngSubmit)="resposta()" novalidate>
-        <input 
+        <input
           [(ngModel)]="descricao"
-          type="text" 
+          type="text"
           name="valor"
           autocomplete="off"
           placeholder="Descrição"
-          class="form-control" 
-          aria-label="Sizing example input" 
+          class="form-control"
+          aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default"
         >
       </form>
